@@ -431,8 +431,9 @@ Userspace hello работает; syscall boundary осознан; fault user �
 - [ ] `make run` поднимает ConGroo в QEMU
 - [ ] Есть serial-шелл и initrd
 - [ ] Можно запустить user-программу
-- [ ] Видны память/задачи/uptime/dmesg
+- [ ] Видны память/задачи/uptime/dmesg и divergence-сводка
 - [ ] Ты объясняешь boot → paging → syscall без конспекта
+- [ ] Философия Lab/congruence читается в тоне UX, но без внешних отсылок
 - [ ] Известные ограничения честно записаны в USERGUIDE
 
 ---

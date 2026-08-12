@@ -60,7 +60,7 @@ congrou/
 ## Bonus
 
 - VGA text вывод параллельно serial
-- Версия/баннер `ConGroo/0.0.1`
+- Lab-баннер в духе [`PHILOSOPHY.md`](../PHILOSOPHY.md): `ConGroo Lab` / `runline boot` / `congruence: pending` (без внешних отсылок)
 
 ## Выход
 
