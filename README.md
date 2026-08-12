@@ -1,20 +1,21 @@
 # ConGroo
 
 Учебная операционная система на **C** (x86_64, QEMU).  
-Код ядра и userspace пишет ученик; в репозитории живут план обучения, протокол сдачи и заметки.
+Код ядра и userspace пишет ученик; в репозитории живут план, протокол сдачи и lab notes.
 
-**Философия:** *continue + grow* — система растёт вместе с тобой. Каждый слой сначала простой и видимый, потом углубляется. ConGroo полезна как лаборатория железа и как минимальный хост для своих программ.
+**ConGroo** — лаборатория расхождений: каждый boot это *runline*, каждый сбой — измерение, каждая удачная сессия — шаг к **конгруэнтности** (когда замысел, код и CPU совпадают).
 
-**Слоган:** `ConGroo — grow with the machine.`
+**Слоган:** `ConGroo — congruence with the machine.`
 
 ## Документы
 
 | Файл | Зачем |
 |------|--------|
-| [docs/LEARNING_PLAN.md](docs/LEARNING_PLAN.md) | Углублённый план обучения (модули, теория, практика, критерии) |
+| [docs/PHILOSOPHY.md](docs/PHILOSOPHY.md) | Философия и вайб лаборатории |
+| [docs/LEARNING_PLAN.md](docs/LEARNING_PLAN.md) | Углублённый план обучения (M00–M10) |
 | [docs/WORKFLOW.md](docs/WORKFLOW.md) | Как сдавать работу в Cursor и как учитель проверяет |
 | [docs/PROGRESS.md](docs/PROGRESS.md) | Трекер прогресса |
-| [docs/templates/SUBMISSION.md](docs/templates/SUBMISSION.md) | Шаблон сдачи домашки / модуля |
+| [docs/templates/SUBMISSION.md](docs/templates/SUBMISSION.md) | Шаблон отчёта эксперимента / сдачи |
 
 ## Стек (целевой)
 
@@ -24,15 +25,18 @@
 - Загрузка: Multiboot2 → позже UEFI (опционально)
 - Сборка: Make + linker script
 
-## Принципы ConGroo
+## Принципы лаборатории
 
-1. **Grow in public** — состояние системы наблюдаемо (`dmesg`, `mem`, `ps`).
-2. **Small, then real** — сначала serial и текст, потом устройства и userspace.
-3. **One truth path** — один понятный boot-path и syscall ABI.
-4. **Useful early** — шелл и запуск программ появляются до «идеальной» архитектуры.
+1. **Congruence** — цель: согласие замысла, кода и поведения машины.
+2. **Divergence is data** — panic и fault обязаны быть видимы и измеримы.
+3. **Retain the signal** — уроки и метрики переживают reboot (`dmesg`, notes, счётчики).
+4. **Lab before legend** — сначала serial и факты, потом театральный тон.
+5. **Close the loop** — сессия заканчивается явным статусом, не «тихим висом».
+
+Подробности — в [docs/PHILOSOPHY.md](docs/PHILOSOPHY.md).
 
 ## С чего начать
 
-1. Прочитай [план](docs/LEARNING_PLAN.md) и [workflow](docs/WORKFLOW.md).
+1. Прочитай [философию](docs/PHILOSOPHY.md), [план](docs/LEARNING_PLAN.md) и [workflow](docs/WORKFLOW.md).
 2. Отметь старт в [PROGRESS.md](docs/PROGRESS.md).
-3. Открой Модуль 0 и сдай домашку по шаблону сдачи.
+3. Открой Модуль 0 и сдай первый отчёт по шаблону.

@@ -17,17 +17,20 @@
 
 ## Практика
 
-- `dmesg` (буфер логов)
+- `dmesg` (retention-буфер логов)
 - Счётчики: ticks, ctx switches, page faults, kmalloc peak (что уже есть)
-- `docs/USERGUIDE.md`
+- Команда вроде `div` / `divergence` — сводка «насколько шумная» runline
+- `docs/USERGUIDE.md` в тоне Lab (без внешних отсылок)
 - Smoke-сценарий из 3–5 команд
 
 ## Acceptance criteria
 
 - [ ] USERGUIDE позволяет поднять систему с нуля
 - [ ] Диагностические команды работают стабильно
+- [ ] Есть читаемый Divergence Index (или эквивалент)
 - [ ] Список ограничений честен (нет сети, нет SMP, …)
 - [ ] Ты проходишь smoke-сценарий без подсказок учителя
+- [ ] Тон UX совпадает с [`PHILOSOPHY.md`](../PHILOSOPHY.md)
 
 ## Контрольные вопросы
 
