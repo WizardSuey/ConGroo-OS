@@ -1,0 +1,23 @@
+# Build artifacts (появятся вместе с congrou/)
+*.o
+*.a
+*.elf
+*.bin
+*.iso
+*.img
+*.map
+*.sym
+*.d
+
+# QEMU / editor
+*.qcow2
+.gdb_history
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local noise
+/build/
+/iso/
+/out/
