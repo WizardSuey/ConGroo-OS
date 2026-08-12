@@ -55,12 +55,13 @@ docs/
 
    Пример: `docs/submissions/M00-01-boot-map.md`
 
-3. Закоммить в свою ветку (или `main`, если так договоримся):
+3. Закоммить **в `main`** (рабочая ветка курса — всегда `main`):
 
    ```bash
+   git checkout main
    git add -A
    git commit -m "submit(M00): boot map and terms"
-   git push
+   git push origin main
    ```
 
 4. В чате Cursor напиши коротко:
@@ -169,10 +170,11 @@ ConGroo учит модели машины, а не зелёной галочк�
 
 ## Git-дисциплина (простая)
 
+- Рабочая ветка курса: **только `main`** (feature-ветки не используем)
 - Коммиты осмысленные: `feat(mm): bump frame allocator`, `submit(M02): printk`
 - Не коммить артефакты: `*.o`, `*.elf`, `iso/`, логи — в `.gitignore`
 - Одна логическая идея ≈ один коммит (идеал, не догма)
-- Ветки по желанию: `learn/m03-interrupts` и т.п.
+- Учитель тоже пишет учебные правки docs сразу в `main`
 
 ---
 
