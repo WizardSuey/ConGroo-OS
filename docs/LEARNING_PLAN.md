@@ -7,35 +7,25 @@
 2. Получить **полезный минимум**: лаборатория + хост для своих программ + наблюдаемость системы.
 
 Связанные документы:
-- Философия и вайб: [`PHILOSOPHY.md`](PHILOSOPHY.md)
+- Конституция ОС (не курс): [`PHILOSOPHY.md`](PHILOSOPHY.md), [`os/RUNTIME.md`](os/RUNTIME.md)
 - Протокол сдачи/проверки: [`WORKFLOW.md`](WORKFLOW.md)
 - Трекер: [`PROGRESS.md`](PROGRESS.md)
 - Карточки модулей: [`modules/`](modules/)
 
 ---
 
-## Философия продукта (чтобы ОС была хоть капельку полезна)
+## Продукт vs курс
 
-Полный текст: [`PHILOSOPHY.md`](PHILOSOPHY.md).
+**Курс** (этот файл) учит собрать ядро по модулям.  
+**ОС** (ConGroo) имеет отдельную конституцию: basins, third path, retention, congruence — см. [`PHILOSOPHY.md`](PHILOSOPHY.md).
 
-**ConGroo** — *лаборатория расхождений*. Имя от *congruence*: согласие замысла, кода и поведения машины.  
-Каждый boot — **runline**. Сбой — не стыд, а **divergence** (измеримое расхождение). То, что переживает reboot — **retention**. Удачный итог сессии — **congruence**.
-
-| Принцип | Смысл | Когда проявляется |
-|---------|--------|-------------------|
-| Congruence | Замысел = код = CPU | критерии модулей, clean halt |
-| Divergence is data | Сбои видимы и считаемы | M02 panic, M03/M04 faults, M09 `div` |
-| Retain the signal | Урок не исчезает с reboot | логи, notes, dmesg, счётчики |
-| Lab before legend | Сначала факты, потом тон | M01 serial → позже баннеры |
-| Close the loop | Сессия заканчивается явно | panic/halt/shell status |
-| One truth path | Один boot-path и syscall ABI | M01, M07 |
-| Useful early | Шелл и программы до «идеала» | M08 |
+В модулях ниже появляются технические точки, где конституцию *вшивают в поведение* (banner, panic, `dmesg`/`div`, user-fault isolation). Не нужно театрализовать домашки: вайб проверяется по runtime ОС, не по пафосу отчёта.
 
 **Полезные сценарии к концу ядра курса:**
-- запускать свои user-программы (`hello`, утилиты);
-- читать uptime, память, задачи, divergence index;
-- использовать ConGroo как стенд экспериментов над железом;
-- вести lab notes / EX-NNN и поднимать initrd+шелл без чужого дистрибутива.
+- запускать свои user-программы;
+- читать uptime / память / задачи / divergence;
+- изолировать user-сбой, не роняя лабораторию целиком;
+- поднять initrd + шелл без чужого дистрибутива.
 
 ---
 
@@ -433,7 +423,7 @@ Userspace hello работает; syscall boundary осознан; fault user �
 - [ ] Можно запустить user-программу
 - [ ] Видны память/задачи/uptime/dmesg и divergence-сводка
 - [ ] Ты объясняешь boot → paging → syscall без конспекта
-- [ ] Философия Lab/congruence читается в тоне UX, но без внешних отсылок
+- [ ] Выполнен DoD из [`os/RUNTIME.md`](os/RUNTIME.md) («философия вшита в ОС»)
 - [ ] Известные ограничения честно записаны в USERGUIDE
 
 ---

@@ -17,20 +17,21 @@
 
 ## Практика
 
-- `dmesg` (retention-буфер логов)
-- Счётчики: ticks, ctx switches, page faults, kmalloc peak (что уже есть)
-- Команда вроде `div` / `divergence` — сводка «насколько шумная» runline
-- `docs/USERGUIDE.md` в тоне Lab (без внешних отсылок)
-- Smoke-сценарий из 3–5 команд
+Закрыть DoD из [`../os/RUNTIME.md`](../os/RUNTIME.md):
+- `dmesg`, `div`, `lastpanic` / witness
+- счётчики: ticks, ctx switches, page faults, kmalloc peak
+- `docs/USERGUIDE.md` языком продукта ConGroo
+- smoke-сценарий из 3–5 команд
+- обновить [`../os/BASINS.md`](../os/BASINS.md) по реальным смертям
 
 ## Acceptance criteria
 
 - [ ] USERGUIDE позволяет поднять систему с нуля
 - [ ] Диагностические команды работают стабильно
-- [ ] Есть читаемый Divergence Index (или эквивалент)
+- [ ] Divergence Index читаем и честен
 - [ ] Список ограничений честен (нет сети, нет SMP, …)
 - [ ] Ты проходишь smoke-сценарий без подсказок учителя
-- [ ] Тон UX совпадает с [`PHILOSOPHY.md`](../PHILOSOPHY.md)
+- [ ] DoD «философия вшита в ОС» из RUNTIME закрыт
 
 ## Контрольные вопросы
 

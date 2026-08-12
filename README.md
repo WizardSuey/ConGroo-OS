@@ -1,42 +1,43 @@
 # ConGroo
 
-Учебная операционная система на **C** (x86_64, QEMU).  
-Код ядра и userspace пишет ученик; в репозитории живут план, протокол сдачи и lab notes.
+Операционная система на **C** (x86_64, QEMU), которую оператор собирает сам.  
+В репозитории также лежат учебный план и протокол работы в Cursor — отдельно от души системы.
 
-**ConGroo** — лаборатория расхождений: каждый boot это *runline*, каждый сбой — измерение, каждая удачная сессия — шаг к **конгруэнтности** (когда замысел, код и CPU совпадают).
+**ConGroo** (*congruence*) — ОС, которая отказывается от тихой неизбежности сбоев: помнит witness прошлых смертей, ищет третий путь вместо жестоких бинарных развилок и закрывает сессию только когда замысел и машина совпали.
 
 **Слоган:** `ConGroo — congruence with the machine.`
 
-## Документы
+## Документы ОС
 
 | Файл | Зачем |
 |------|--------|
-| [docs/PHILOSOPHY.md](docs/PHILOSOPHY.md) | Философия и вайб лаборатории |
-| [docs/LEARNING_PLAN.md](docs/LEARNING_PLAN.md) | Углублённый план обучения (M00–M10) |
-| [docs/WORKFLOW.md](docs/WORKFLOW.md) | Как сдавать работу в Cursor и как учитель проверяет |
+| [docs/PHILOSOPHY.md](docs/PHILOSOPHY.md) | Конституция: законы, смысл, голос |
+| [docs/os/RUNTIME.md](docs/os/RUNTIME.md) | Как законы проявляются в boot/panic/шелле |
+| [docs/os/BASINS.md](docs/os/BASINS.md) | Каталог «колодцев», в которые систему тянет |
+
+## Документы обучения (отдельно)
+
+| Файл | Зачем |
+|------|--------|
+| [docs/LEARNING_PLAN.md](docs/LEARNING_PLAN.md) | План модулей M00–M10 |
+| [docs/WORKFLOW.md](docs/WORKFLOW.md) | Сдача и проверка в Cursor |
 | [docs/PROGRESS.md](docs/PROGRESS.md) | Трекер прогресса |
-| [docs/templates/SUBMISSION.md](docs/templates/SUBMISSION.md) | Шаблон отчёта эксперимента / сдачи |
+
+## Законы (кратко)
+
+1. **Basins** — у системы есть притягивающие плохие исходы; свобода = спроектировать выход.
+2. **Third Path** — не принимать ложную вагонетку kill-all vs mute-fail.
+3. **Retention** — опыт реален, пока удержан свидетелем (`dmesg`, counters, lastpanic).
+4. **Mask & Charge** — lab-тон допустим; ответственность за ядро абсолютна.
+5. **Reweigh** — прошлое не стирают ради чистой статистики; его переосмысляют.
+
+Полный текст — в [docs/PHILOSOPHY.md](docs/PHILOSOPHY.md).
 
 ## Стек (целевой)
 
-- Язык: C (+ минимум NASM/GAS)
-- Архитектура: x86_64
-- Эмуляция: QEMU
-- Загрузка: Multiboot2 → позже UEFI (опционально)
-- Сборка: Make + linker script
-
-## Принципы лаборатории
-
-1. **Congruence** — цель: согласие замысла, кода и поведения машины.
-2. **Divergence is data** — panic и fault обязаны быть видимы и измеримы.
-3. **Retain the signal** — уроки и метрики переживают reboot (`dmesg`, notes, счётчики).
-4. **Lab before legend** — сначала serial и факты, потом театральный тон.
-5. **Close the loop** — сессия заканчивается явным статусом, не «тихим висом».
-
-Подробности — в [docs/PHILOSOPHY.md](docs/PHILOSOPHY.md).
+- C (+ минимум asm), x86_64, QEMU, Multiboot2, Make + linker script
 
 ## С чего начать
 
-1. Прочитай [философию](docs/PHILOSOPHY.md), [план](docs/LEARNING_PLAN.md) и [workflow](docs/WORKFLOW.md).
-2. Отметь старт в [PROGRESS.md](docs/PROGRESS.md).
-3. Открой Модуль 0 и сдай первый отчёт по шаблону.
+1. Прочитай конституцию ОС: [PHILOSOPHY.md](docs/PHILOSOPHY.md) и [RUNTIME.md](docs/os/RUNTIME.md).
+2. Для учёбы — [LEARNING_PLAN.md](docs/LEARNING_PLAN.md) / Модуль M00.
